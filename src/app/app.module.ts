@@ -12,13 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { SigningUpComponent } from './components/signing-up/signing-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigningUpComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PasswordRecoveryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
   exports:[
     SigningUpComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PasswordRecoveryComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
