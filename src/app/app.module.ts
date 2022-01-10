@@ -11,12 +11,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SigningUpComponent } from './components/signing-up/signing-up.component';
 import { LoginComponent } from './components/login/login.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigningUpComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   exports:[
     SigningUpComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
