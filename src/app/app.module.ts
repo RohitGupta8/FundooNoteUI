@@ -10,11 +10,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SigningUpComponent } from './components/signing-up/signing-up.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigningUpComponent
+    SigningUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { SigningUpComponent } from './components/signing-up/signing-up.component
     MatIconModule
   ],
   exports:[
-    SigningUpComponent
+    SigningUpComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
