@@ -7,20 +7,20 @@
 
       <form (ngSubmit)="onSubmit()">
         <div>
-          <h1 style="font-weight: 500;font-family: Comic Sans MS ;text-align: center;">SignIn </h1>
+          <h2 style="font-weight: 400;font-family:Roboto, sans-serif; ;text-align: center;">SignIn </h2>
           <h4 style="text-align: center;">Use your fundooNote Account</h4>
         </div>
         <div class="form-content">
           <mat-form-field appearance="outline" class="form-field">
             <mat-label>Email</mat-label>
-            <input matInput type="email" name="Email" id="Email" class="input" formControlName="email" />
+            <input matInput type="email"  formControlName="email" />
             <mat-hint *ngIf="!submitted">You can use letters ,numbers or periods</mat-hint>
           </mat-form-field>
 
           <div class="password">
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="password" />
+              <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password" />
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

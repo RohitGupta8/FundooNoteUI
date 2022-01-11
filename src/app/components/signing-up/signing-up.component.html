@@ -1,61 +1,54 @@
 <div class="container">
   <div class="form">
-    <div >
+    <div>
       <div class="logo"><img src="../../../assets/fundooNote.png"></div>
       <form (ngSubmit)="onSubmit()">
         <div class="form-text">
-          <h1 style="font-weight: 500;font-family: Comic Sans MS ;">Create your Fundoo Note Account</h1>
+          <h2>Create your Fundoo Note Account</h2>
           <h4>to continue to Fundoo</h4>
         </div>
         <div class="form-content">
-          <div class="names">
-            <mat-form-field appearance="outline" >
+          <div>
+            <mat-form-field appearance="outline" class="names">
               <mat-label>First Name</mat-label>
-              <input matInput class="input" id="firstName" name="first_name" formControlName="firstName" />
+              <input matInput placeholder="" formControlName="firstName" />
+              <mat-error>Enter first and last names</mat-error>
             </mat-form-field>
-
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="outline" class="names">
               <mat-label>Last Name</mat-label>
-              <input matInput class="input" id="first_name" name="first_name" formControlName="lastName" />
+              <input matInput formControlName="lastName" />
             </mat-form-field>
           </div>
-
           <mat-form-field appearance="outline" class="email">
             <mat-label>Email</mat-label>
-            <input matInput type="email" name="Email" id="Email" class="input" formControlName="email" />
+            <input matInput type="email" formControlName="email" />
             <mat-hint *ngIf="!submitted">You can use letters ,numbers or periods</mat-hint>
           </mat-form-field>
-
-          <div class="password">
+          <div>
             <mat-form-field appearance="outline" class="confirm">
               <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="password" />
-              <mat-hint *ngIf="!submitted">
-                Use 8 or more characters with a mix of letters, numbers & symbols
-              </mat-hint>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
             </mat-form-field>
             <mat-form-field appearance="outline" class="confirm">
               <mat-label>Confirm</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="confirm" />
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm" />
             </mat-form-field>
-            <div class="checkbox">
-              <mat-checkbox id="showPassword" (click)="ShowPassword()">{{hide ? 'Show Password':'Hide Password'}}</mat-checkbox>
+            <div style="font-size: x-small;">
+              <mat-hint *ngIf="!submitted">
+                Use 8 or more characters with a mix of letters, numbers & symbols
+              </mat-hint>
             </div>
-
-          </div>
-
-        </div>
-
-        <div class="form-footer">
-          <div>
-            <button mat-button color="primary" routerLink="/login">
-              Sign in instead
-            </button>
+            <div class="checkbox">
+              <mat-checkbox id="showPassword" (click)="ShowPassword()">{{hide ? 'Show Password':'Hide Password'}}
+              </mat-checkbox>
+            </div>
           </div>
           <div>
-            <button mat-flat-button color="primary" id="login-button">
-              Sign Up
-            </button>
+            <span><button mat-button color="primary" routerLink="/login" class="btn">
+                Sign in instead
+              </button></span> <span><button mat-flat-button color="primary" class="btn1">
+                Sign Up
+              </button></span>
           </div>
         </div>
       </form>
@@ -65,5 +58,4 @@
       <p>One account. All of fundooNote Account <br> working for you</p>
     </div>
   </div>
-  <router-outlet></router-outlet>
-
+</div>

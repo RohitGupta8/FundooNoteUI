@@ -14,58 +14,66 @@
 
 $box-size: 8px;
 .container {
-  @include flex(
-    $display: flex,
-    $alignitems: center,
-    $justifycontent: center,
-    $flexdirection: row
-  );
-  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
 }
 
 .imageContainer {
-  padding-left: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   p {
     text-align: center;
     font-family: "Roboto", sans-serif;
-    font-size: smaller;
+    font-size: small;
+  }
+  img {
+    display: block;
+  }
+}
+
+.form-text {
+  h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
   }
 }
 
 mat-form-field {
   font-size: 13px;
+  width: 35%;
   input {
     padding: 1px;
   }
 }
+
 mat-label {
   font-size: 14px;
 }
-mat-error {
-  font-size: 11px;
-}
 
-.form-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  flex-flow: row wrap;
+mat-error {
+  font-size: 14px;
 }
 
 .form {
+  size: 200;
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border: 1px solid rgb(97, 93, 93);
+  box-shadow: 0px 2px 4px #00000029;
+  border: 1px solid rgb(141, 138, 138);
   border-radius: 12px;
-  padding: 2%;
+  padding: 3%;
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
+}
+
+.btn1 {
+  margin-left: 100px;
+  margin-top: 40px;
 }
 
 .text {
@@ -78,27 +86,26 @@ mat-error {
 .form-content {
   display: flex;
   flex-flow: column wrap;
-  width: 100%;
 }
+
 .email {
-  width: 100%;
+  width: 71.5%;
   font-size: 13px;
 }
+
 .confirm {
   padding: 2px;
 }
+
 .form-footer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   margin: 5% 0;
   text-align: center;
 }
 
 .names {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  padding: 2px;
 }
 
 .form-field {
@@ -112,14 +119,9 @@ mat-error {
   align-items: center;
   padding-left: 80px;
 }
-.checkbox {
-  padding-top: 15px;
-  padding-left: 5px;
-}
 
-#image-text {
-  text-align: center;
-  font-size: small;
+.checkbox {
+  margin-top: 20px;
 }
 
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
@@ -135,7 +137,8 @@ mat-error {
   transform: translateY(-1em) scale(0.75);
   width: 103.33333%;
 }
-@media only screen and (max-width: 900px) {
+
+@media only screen and (max-width: 750px) {
   .imageContainer {
     display: none !important;
   }
@@ -145,42 +148,60 @@ mat-error {
     font-size: 20px;
     margin-left: 25px;
   }
+
   .confirm {
     width: 85% !important;
     font-size: 17px;
     margin-left: 25px;
   }
+
   .container {
     width: 100%;
     height: 100%;
   }
+
   mat-form-field {
     width: 100% !important;
   }
+
   .email {
     width: 85% !important;
     font-size: 17px;
     margin-left: 25px;
   }
-  .checkbox{
+
+  .checkbox {
     margin-left: 25px;
   }
+
   mat-hint {
     color: #5f6368;
     font-size: 13px;
     padding-bottom: 4px;
+    margin-left: 25px;
   }
-  .form-text{
-    h1,h4{font-size: 20px;
-    text-align: center;}
+
+  .form-text {
+    h2,
+    h4 {
+      font-size: 20px;
+      text-align: center;
+    }
   }
-  .form-footer{
+
+  .form-footer {
     display: flex;
     flex-flow: column;
   }
-  .logo{
-     display: flex;
-  justify-content: center;
-  align-items: center;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    border: none;
+    box-shadow: none;
   }
 }
