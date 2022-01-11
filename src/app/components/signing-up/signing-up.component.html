@@ -1,40 +1,40 @@
-<div class="form-container">
+<div class="container">
   <div class="form">
-    <div class="form-width" >
-      <div><img src="../../../assets/fundooNote.png"></div>
-      <form class="form-text" (ngSubmit)="onSubmit()">
-        <div>
+    <div >
+      <div class="logo"><img src="../../../assets/fundooNote.png"></div>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-text">
           <h1 style="font-weight: 500;font-family: Comic Sans MS ;">Create your Fundoo Note Account</h1>
           <h4>to continue to Fundoo</h4>
         </div>
         <div class="form-content">
           <div class="names">
-            <mat-form-field appearance="outline" class="form-field">
+            <mat-form-field appearance="outline" >
               <mat-label>First Name</mat-label>
-              <input matInput class="input" id="first_name" name="first_name" formControlName="firstName" />
+              <input matInput class="input" id="firstName" name="first_name" formControlName="firstName" />
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="form-field">
+            <mat-form-field appearance="outline" >
               <mat-label>Last Name</mat-label>
               <input matInput class="input" id="first_name" name="first_name" formControlName="lastName" />
             </mat-form-field>
           </div>
 
-          <mat-form-field appearance="outline" class="form-field">
+          <mat-form-field appearance="outline" class="email">
             <mat-label>Email</mat-label>
             <input matInput type="email" name="Email" id="Email" class="input" formControlName="email" />
             <mat-hint *ngIf="!submitted">You can use letters ,numbers or periods</mat-hint>
           </mat-form-field>
 
-          <div>
-            <mat-form-field appearance="outline" class="form-field">
+          <div class="password">
+            <mat-form-field appearance="outline" class="confirm">
               <mat-label>Password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="password" />
               <mat-hint *ngIf="!submitted">
                 Use 8 or more characters with a mix of letters, numbers & symbols
               </mat-hint>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="form-field">
+            <mat-form-field appearance="outline" class="confirm">
               <mat-label>Confirm</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="confirm" />
             </mat-form-field>
@@ -60,15 +60,9 @@
         </div>
       </form>
     </div>
-    <div class="image-signup">
-      <div class="image-item">
-        <img src="../../../assets/signUp.jpg" />
-      </div>
-      <div>
-        <p id="image-text">
-          One account. All of Fundoo Note<br /> working for you.
-        </p>
-      </div>
+    <div class="imageContainer">
+      <img src="../../../assets/signUp.jpg">
+      <p>One account. All of fundooNote Account <br> working for you</p>
     </div>
   </div>
   <router-outlet></router-outlet>

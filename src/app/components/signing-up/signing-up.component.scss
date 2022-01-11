@@ -1,93 +1,186 @@
-.form-text {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
+
+@mixin flex($display, $alignitems, $justifycontent, $flexdirection) {
+  // Mixin with defaults
+  display: $display;
+  align-items: $alignitems;
+  justify-content: $justifycontent;
+  flex-direction: $flexdirection;
+}
+@mixin fontSize($size) {
+  font-size: $size;
+}
+
+$box-size: 8px;
+.container {
+  @include flex(
+    $display: flex,
+    $alignitems: center,
+    $justifycontent: center,
+    $flexdirection: row
+  );
+  margin-top: 3%;
+}
+
+.imageContainer {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: smaller;
+  }
+}
+
+mat-form-field {
+  font-size: 13px;
+  input {
+    padding: 1px;
+  }
+}
+mat-label {
+  font-size: 14px;
+}
+mat-error {
+  font-size: 11px;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-flow: row wrap;
+}
+
+.form {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid rgb(97, 93, 93);
+  border-radius: 12px;
+  padding: 2%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.text {
+  text-align: left;
+  font-family: Lucida;
+  font-weight: 900;
+  justify-content: center;
+}
+
+.form-content {
   display: flex;
   flex-flow: column wrap;
+  width: 100%;
 }
-@media (min-width: 450px) {
-  .form-container {
-    padding: 48px 40px 36px;
-  }
+.email {
+  width: 100%;
+  font-size: 13px;
+}
+.confirm {
+  padding: 2px;
+}
+.form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+  text-align: center;
+}
 
-  .form-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    flex-flow: row wrap;
-  }
-  
+.names {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
-  .form {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid rgb(97, 93, 93);
-    border-radius: 12px;
-    padding: 2%;
-    display: flex;
-    flex-flow: row wrap;
-    max-width: 55%;
-  }
+.form-field {
+  margin-right: 3px;
+}
 
-  .text {
-    text-align: left;
-    font-family: Lucida;
-    font-weight: 900;
-    justify-content: center;
-  }
+.image-signup {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+}
+.checkbox {
+  padding-top: 15px;
+  padding-left: 5px;
+}
 
-  .form-content {
-    display: flex;
-    flex-flow: column wrap;
-    width: 100%;
-  }
+#image-text {
+  text-align: center;
+  font-size: small;
+}
 
-  .form-footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 0;
-    text-align: center;
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.3em 9px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.6em;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translateY(-1em) scale(0.75);
+  width: 103.33333%;
+}
+@media only screen and (max-width: 900px) {
+  .imageContainer {
+    display: none !important;
   }
 
   .names {
+    width: 85% !important;
+    font-size: 20px;
+    margin-left: 25px;
+  }
+  .confirm {
+    width: 85% !important;
+    font-size: 17px;
+    margin-left: 25px;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  mat-form-field {
+    width: 100% !important;
+  }
+  .email {
+    width: 85% !important;
+    font-size: 17px;
+    margin-left: 25px;
+  }
+  .checkbox{
+    margin-left: 25px;
+  }
+  mat-hint {
+    color: #5f6368;
+    font-size: 13px;
+    padding-bottom: 4px;
+  }
+  .form-text{
+    h1,h4{font-size: 20px;
+    text-align: center;}
+  }
+  .form-footer{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: column;
   }
-
-  .form-field {
-    margin-right: 3px;
-  }
-
-  .image-signup {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    padding-left: 40px;
-  }
-  .checkbox {
-    padding-top: 15px;
-    padding-left: 5px;
-  }
-
-  #image-text {
-    text-align: center;
-    font-size: small;
-  }
-
-  ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
-    padding: 0.3em 9px;
-  }
-  ::ng-deep .mat-form-field-label-wrapper {
-    top: -1.6em;
-  }
-
-  ::ng-deep
-    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-    .mat-form-field-label {
-    transform: translateY(-0.8em) scale(0.85);
-    width: 50.33333%;
+  .logo{
+     display: flex;
+  justify-content: center;
+  align-items: center;
   }
 }
