@@ -1,8 +1,8 @@
 <div class="form-container">
   <div class="form">
-    <div class="form-text">
-      <img src="../../../assets/fundooNote.png">
-      <form (ngSubmit)="onSubmit()">
+    <div class="form-width" >
+      <div><img src="../../../assets/fundooNote.png"></div>
+      <form class="form-text" (ngSubmit)="onSubmit()">
         <div>
           <h1 style="font-weight: 500;font-family: Comic Sans MS ;">Create your Fundoo Note Account</h1>
           <h4>to continue to Fundoo</h4>
@@ -26,14 +26,10 @@
             <mat-hint *ngIf="!submitted">You can use letters ,numbers or periods</mat-hint>
           </mat-form-field>
 
-          <div class="password">
+          <div>
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>Password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="password" />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
               <mat-hint *ngIf="!submitted">
                 Use 8 or more characters with a mix of letters, numbers & symbols
               </mat-hint>
@@ -42,6 +38,9 @@
               <mat-label>Confirm</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" class="input" formControlName="confirm" />
             </mat-form-field>
+            <div class="checkbox">
+              <mat-checkbox id="showPassword" (click)="ShowPassword()">{{hide ? 'Show Password':'Hide Password'}}</mat-checkbox>
+            </div>
 
           </div>
 

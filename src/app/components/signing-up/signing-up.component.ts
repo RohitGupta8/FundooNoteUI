@@ -15,5 +15,7 @@ export class SigningUpComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   }
-
+  ShowPassword() {
+    this.hide = !this.hide;
+  }
 }
