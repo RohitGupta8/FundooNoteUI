@@ -19,4 +19,11 @@ export class UserServiceService {
     }
     return this.httpService.post(`${environment.baseUrl}/register`, params)
   }
+
+  Forgot(data: any) {
+    const params = {
+      email: data.email
+    }
+    return this.httpService.post(`${environment.baseUrl}/forgotPassword`, params)
+  }
 }
