@@ -2,36 +2,39 @@
   <div class="form">
     <div>
       <div class="logo"><img src="../../../assets/fundooNote.png"></div>
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <div class="form-text">
           <h2>Create your Fundoo Note Account</h2>
-          <h4>to continue to Fundoo</h4>
         </div>
         <div class="form-content">
           <div>
-            <mat-form-field appearance="outline" class="names">
+            <mat-form-field appearance="outline" class="names" hideRequiredMarker >
               <mat-label>First Name</mat-label>
               <input matInput placeholder="" formControlName="firstName" />
-              <mat-error>Enter first and last names</mat-error>
+              <mat-error>* first name is required</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="names">
+            <mat-form-field appearance="outline" class="names" hideRequiredMarker>
               <mat-label>Last Name</mat-label>
               <input matInput formControlName="lastName" />
+              <mat-error>* last name is required</mat-error>
             </mat-form-field>
           </div>
-          <mat-form-field appearance="outline" class="email">
+          <mat-form-field appearance="outline" class="email" hideRequiredMarker>
             <mat-label>Email</mat-label>
             <input matInput type="email" formControlName="email" />
             <mat-hint *ngIf="!submitted">You can use letters ,numbers or periods</mat-hint>
+            <mat-error>* email is required</mat-error>
           </mat-form-field>
           <div>
-            <mat-form-field appearance="outline" class="confirm">
+            <mat-form-field appearance="outline" class="confirm" hideRequiredMarker>
               <mat-label>Password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+              <mat-error>* password is required</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="confirm">
+            <mat-form-field appearance="outline" class="confirm" hideRequiredMarker>
               <mat-label>Confirm</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm" />
+            <mat-error>* matching password is required</mat-error>
             </mat-form-field>
             <div style="font-size: x-small;">
               <mat-hint *ngIf="!submitted">

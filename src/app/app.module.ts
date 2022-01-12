@@ -12,6 +12,7 @@ import { SigningUpComponent } from './components/signing-up/signing-up.component
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PasswordRecoveryComponent } from './components/password-recovery/passwo
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   exports:[
     SigningUpComponent,
