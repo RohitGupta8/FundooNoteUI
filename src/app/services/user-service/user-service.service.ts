@@ -26,4 +26,13 @@ export class UserServiceService {
     }
     return this.httpService.post(`${environment.baseUrl}/forgotPassword`, params)
   }
+
+  ResetPassword(data: any) {
+    const params = {
+      email: data.email,
+      password: data.password,
+      code: data.code
+    }
+    return this.httpService.patch(`${environment.baseUrl}/resetPassword`, params)
+  }
 }
