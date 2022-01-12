@@ -19,6 +19,13 @@ export class UserServiceService {
     }
     return this.httpService.post(`${environment.baseUrl}/register`, params)
   }
+  Login(data: any) {
+    const params = {
+      email: data.email,
+      password: data.password
+    }
+    return this.httpService.post(`${environment.baseUrl}/login`, params)
+  }
 
   Forgot(data: any) {
     const params = {
