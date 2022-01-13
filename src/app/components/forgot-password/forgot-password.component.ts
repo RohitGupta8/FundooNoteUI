@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/services/user-service/user-service.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
@@ -11,7 +12,8 @@ export class ForgotPasswordComponent implements OnInit {
   forgotForm!: FormGroup;
   submitted = false;
   hide = true;
-  constructor(private fb: FormBuilder, private userInfo: UserServiceService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userInfo: UserServiceService,
+     private router: Router, private snakeBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.forgotForm = this.fb.group({
@@ -19,22 +21,21 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.submitted = true;
-    if (this.forgotForm.value.password != this.forgotForm.value.confirm) {
-      return alert("password didn't match");
-    }
-    
     if (this.forgotForm.valid) {
       console.log(this.forgotForm.value);
       let reqData = {
         email: this.forgotForm.value.email
       }
-      return this.userInfo.Forgot(reqData).subscribe((res: any) => {
+      this.userInfo.Forgot(reqData).subscribe((res: any) => {
         console.log(res);
-        alert("SuccessFully...... send a mail !!! plz take otp from mail ");
+        this.snakeBar.open(`${res.message}`, '', { duration: 2500, verticalPosition: 'bottom', horizontalPosition: 'center' })
         if (`${res.status == true}`)
           this.router.navigate(['/reset']);
-      })
+      },
+        error => {
+          this.snakeBar.open(`${error.message}`, '', { duration: 2500, verticalPosition: 'bottom', horizontalPosition: 'center' })
+
+        })
     }
   }
 }

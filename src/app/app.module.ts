@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SigningUpComponent } from './components/signing-up/signing-up.component';
@@ -15,6 +16,7 @@ import { PasswordRecoveryComponent } from './components/password-recovery/passwo
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { DashBoardComponent } from './components/dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     SigningUpComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    PasswordRecoveryComponent
+    PasswordRecoveryComponent,
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,13 +38,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   exports:[
     SigningUpComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    PasswordRecoveryComponent
+    PasswordRecoveryComponent,
+    DashBoardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
