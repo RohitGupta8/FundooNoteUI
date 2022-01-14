@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+.noteTitle{
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #202124;
+}
+.notedescription{
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+}
+ .titlerow{
+     display: flex;
+     flex-direction: row;
+ }
+  .noteTitle{
+      font-size: 16px;
+      flex-grow: 12;
+  }
+  .icon{
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 550px ;   
+        border-radius: 10px;
+        margin-top: 25px;    
+    }
+     
+    textarea{
+        border: unset;
+        font-size: 17px;
+        color: #4F4F4F;
+        width: 100%;
+    }
+    textarea:focus { 
+        outline: none !important;
+        border-color: white;
+     }
+     mat-icon{
+         color: #757575;
+     }
+
+//---------------------------------------------------------------------------------------------------
+ ::ng-deep .mat-drawer-content{
+      overflow:unset;
+  } 
+
+  .title{
+      font-size: 16px;
+      flex-grow: 12;
+      padding-top: 10px;
+  }
+
+  .icons{
+      display: flex;
+      flex-grow: 3;
+      justify-content: space-around;
+    }
+
+    .notebar
+    {
+        display: flex;
+        flex-direction: row;
+        width: 550px ;   
+        height: 15px;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 25px;
+        
+    }
+    .mat-card:not([class*=mat-elevation-z])
+    {
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    }
+.label{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: 18px;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    padding: 5px;
+    p{
+        font-size: small;
+        color: #464043;
+    }
+    mat-icon{
+        font-size: 17px;
+    }
+}
+.closeButton{
+    display: flex;
+    justify-content: flex-end;
+}
+.closeButton:hover{
+    cursor: pointer;
+}
+
+    

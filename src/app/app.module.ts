@@ -17,6 +17,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { IconComponent } from './components/icon/icon.component';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,10 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
     LoginComponent,
     ForgotPasswordComponent,
     PasswordRecoveryComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    AddNoteComponent,
+    IconComponent,
+    CollaboratorComponent
   ],
   imports: [
     BrowserModule,
@@ -39,14 +49,20 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatToolbarModule
   ],
   exports:[
     SigningUpComponent,
     LoginComponent,
     ForgotPasswordComponent,
     PasswordRecoveryComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    AddNoteComponent,
+    IconComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,39 @@
+<mat-card class="notebar" *ngIf="hide" (click)="hide=false">
+    <mat-card-title class="title">
+        Take a Note...
+    </mat-card-title>
+    <mat-card-subtitle class="icons">
+        <mat-icon mat-list-icon class="material-icons-outlined">check_box</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined">brush</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined">crop_original</mat-icon>
+    </mat-card-subtitle>
+</mat-card>
+<mat-card class="card" *ngIf="hide==false" [formGroup]="NoteForm" [style.background-color]="noteColor">
+    <div class="titlerow">
+        <mat-card-title class="noteTitle">
+            <textarea cdkTextareaAutosize placeholder="Title" class="noteTitle" formControlName="Title"
+                [style.background-color]="noteColor"></textarea>
+        </mat-card-title>
+        <mat-card-subtitle class="icon">
+            <button mat-icon-button class="example-icon favorite-icon" (click)="pinNote()">
+                <mat-icon mat-list-icon class="material-icons-outlined" style="color:#767676 ;" *ngIf="!pinned">push_pin
+                </mat-icon>
+                <mat-icon mat-list-icon style="color:#767676 ;" *ngIf="pinned">push_pin</mat-icon>
+            </button>
+        </mat-card-subtitle>
+    </div>
+    <div class="description" style="padding-top:10px ;">
+        <mat-card-title class="description">
+            <textarea cdkTextareaAutosize placeholder="Take a note..." class="notedescription"
+                formControlName="Description" [style.background-color]="noteColor"></textarea>
+        </mat-card-title>
+    </div>
+    <div class="footer" style="padding-top:15px ;">
+        <span *ngIf="isReminder" class="label">
+            <mat-icon class="material-icons-outlined">watch_later</mat-icon>
+            <p>{{Reminder}}</p>
+            <mat-icon class="closeButton" (click)="RemoveReminder()">close</mat-icon>
+        </span>
+        <app-icon></app-icon>
+    </div>
+</mat-card>

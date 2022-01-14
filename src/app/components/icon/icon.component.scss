@@ -1,0 +1,60 @@
+.footericons {
+    display: flex !important;
+    flex-direction: row !important;
+    .icon{
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 2;
+    }
+    .button{
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 2;
+        padding-right: 10px;
+        margin-bottom:-10px ;
+    }
+}
+::ng-deep .reminderBox {
+    width: 250px !important;
+    border-radius: 8px !important;
+   
+}
+::ng-deep .moreOption {
+    width: 100px !important;
+    min-height: auto!important;
+    border-radius: 8px !important;
+}
+button.mat-menu-item {
+    width: 100%;
+    height: 40px;
+}
+::ng-deep .mat-menu-content:not(:empty) {
+    padding-top: 0;
+     padding-bottom: 0; 
+}
+.mat-menu-item{
+    display: flex;
+    justify-content: space-between;
+}
+::ng-deep .colorbox{
+    display: flex;
+    flex-flow: row wrap;
+    width: 116px;
+    border-radius: 8px;
+    padding: 5px;
+
+}
+.colors
+{
+    height: 25px;
+    width:25px;
+    border-radius: 50%;
+    margin: 1px;
+    border: 1px solid pink;
+    
+}
+.colors:hover
+{
+    cursor: pointer;
+    border: 1px solid black;
+}

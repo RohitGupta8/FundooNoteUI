@@ -1,1 +1,62 @@
-<p>dash-board works!</p>
+<mat-toolbar style="background-color: white;border-bottom: 1px solid #DADCE0;">
+    <div class="menu">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon class="menuicon" (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <div style="margin-left: 2px;">
+           <img src="../../../assets/fundooNote.png" alt="">
+        </div>
+    </div>
+    <div class="search">
+        <mat-form-field class="search" appearance="fill" [style.width.px]=500>
+            <input matInput placeholder="Search">
+            <mat-icon matPrefix style="margin-right: 10px;">search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="endIcons">
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>view_agenda</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>supervised_user_circle</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container class="main">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="side_nav" (mouseover)="opened=true">
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="sidenavLogo">lightbulb_outline</mat-icon>
+                <h4 mat-line>Notes</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="sidenavLogo">notifications_none</mat-icon>
+                <h4 mat-line>Reminders</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">edit_outline</mat-icon>
+                <h4 mat-line>Edit labels</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">archive</mat-icon>
+                <h4 mat-line>Archive</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">delete</mat-icon>
+                <h4 mat-line>Trash</h4>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="maincontent" >
+            <app-add-note></app-add-note>
+        </div>
+        <!-- <div class="notes">
+            <app-get-notes *ngIf="getnotes=='Notes'"></app-get-notes>
+            <app-get-archive-notes *ngIf="getnotes=='Archive'"></app-get-archive-notes>
+            <app-get-reminder *ngIf="getnotes=='Reminders'"></app-get-reminder>
+            <app-get-trash *ngIf="getnotes=='Trash'"></app-get-trash>
+            <app-get-label-notes *ngIf="getnotes=='Label'" [labels]="noteLabel"></app-get-label-notes>
+        </div> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>
