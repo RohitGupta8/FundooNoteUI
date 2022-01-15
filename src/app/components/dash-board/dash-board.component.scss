@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 mat-toolbar{
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,7 @@ padding-right: 10px;
       width: 0;
     }
 }
+
 .menuicon {
     color: #5F6368;
 }
@@ -67,6 +69,46 @@ mat-form-field {
     padding: 1px;
   }
 }
+
+.mat-list-base[dense] .mat-list-item .mat-list-item-content, .mat-list-base[dense] .mat-list-option .mat-list-item-content{
+    padding: 0 !important;
+    
+}
+.mat-list-base ,.mat-list-item ,.mat-icon,.mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    padding: 0 !important;
+}
+
 .search{
     padding-bottom: 9px;
+}
+::ng-deep .mat-menu-content {
+  width: 200px !important; 
+  height: 120px !important; 
+}
+::ng-deep .mat-menu-content {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.matcard{
+  width: 794px;
+  height: 45px;
+  border-radius: 12px;
+}
+.textbox{
+  width: 91%;
+  height: 120%;
+  outline: none;
+  border: none;
+  font-size: 13px;
+}
+mat-list-item:hover
+{
+    background-color: #FEEFC3 !important;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.mat-menu-item{
+  line-height:35px;
+  height:35px;
 }

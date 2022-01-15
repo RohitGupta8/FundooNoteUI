@@ -7,11 +7,11 @@
            <img src="../../../assets/fundooNote.png" alt="">
         </div>
     </div>
-    <div class="search">
-        <mat-form-field class="search" appearance="fill" [style.width.px]=500>
-            <input matInput placeholder="Search">
-            <mat-icon matPrefix style="margin-right: 10px;">search</mat-icon>
-        </mat-form-field>
+    <div fxLayoutAlign="space-around center" fxFlex=50>
+        <mat-card fxLayout="row" class="matcard" fxLayoutGap="5px">
+            <mat-icon>search</mat-icon>
+            <input class="textbox" matInput placeholder="Search">
+        </mat-card>
     </div>
     <div class="endIcons">
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -26,24 +26,24 @@
     <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="side_nav" (mouseover)="opened=true">
         <mat-nav-list>
             <mat-list-item>
-                <mat-icon mat-list-icon class="sidenavLogo">lightbulb_outline</mat-icon>
-                <h4 mat-line>Notes</h4>
+                <mat-icon mat-list-icon class="sidenavLogo" >lightbulb_outline</mat-icon>
+                <h4 mat-line style="font-size:14px">Notes</h4>
             </mat-list-item>
             <mat-list-item>
                 <mat-icon mat-list-icon class="sidenavLogo">notifications_none</mat-icon>
-                <h4 mat-line>Reminders</h4>
+                <h6 mat-line style="font-size:14px">Reminders</h6>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">edit_outline</mat-icon>
-                <h4 mat-line>Edit labels</h4>
+                <mat-icon mat-list-icon class="sidenavLogo">edit_outline</mat-icon>
+                <h6 mat-line style="font-size:14px">Edit labels</h6>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">archive</mat-icon>
-                <h4 mat-line>Archive</h4>
+                <mat-icon mat-list-icon class="sidenavLogo">archive</mat-icon>
+                <h4 mat-line style="font-size:14px">Archive</h4>
             </mat-list-item>
             <mat-list-item>
-                <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">delete</mat-icon>
-                <h4 mat-line>Trash</h4>
+                <mat-icon mat-list-icon class="sidenavLogo">delete</mat-icon>
+                <h4 mat-line style="font-size:14px">Trash</h4>
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
